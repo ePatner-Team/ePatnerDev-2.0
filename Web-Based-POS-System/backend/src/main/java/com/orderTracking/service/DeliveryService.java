@@ -1,15 +1,18 @@
 package com.orderTracking.service;
 
-import com.orderTracking.dto.OrderTrackingDTO;
+import com.orderTracking.dto.DeliveryDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DeliveryService {
+public abstract class DeliveryService {
     // Delivery management functionality
-    public DeliveryDTO assignDelivery(Long orderId, DeliveryDTO deliveryDTO)
-    public DeliveryDTO updateDeliveryStatus(Long deliveryId, String status)
-    public DeliveryDTO getDeliveryDetails(Long deliveryId)
-    public List<DeliveryDTO> getActiveDeliveries()
+    public abstract DeliveryDTO assignDelivery(Long orderId, DeliveryDTO deliveryDTO);
+
+    public abstract DeliveryDTO updateDeliveryStatus(Long deliveryId, String status);
+
+    public abstract DeliveryDTO getDeliveryDetails(Long deliveryId);
+
+    public abstract List<DeliveryDTO> getActiveDeliveries();
 }
